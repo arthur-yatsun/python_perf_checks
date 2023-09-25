@@ -16,7 +16,19 @@ def empty_dict_2():
     b = {}
 
 
+@measure_time_with_iterations(iterations=1_000_000)
+def dict_1():
+    a = dict(a=1, b=2, c=3)
+
+
+@measure_time_with_iterations(iterations=1_000_000)
+def dict_2():
+    b = {"a": 1, "b": 2, "c": 3}
+
+
 if __name__ == '__main__':
     empty_dict_1()
     empty_dict_2()
 
+    dict_1()
+    dict_2()
