@@ -9,10 +9,12 @@ def measure_time(func):
     def wrapper(*args, **kwargs):
         start = time.perf_counter()
 
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
 
         end = time.perf_counter()
         print(f"{func.__name__} - {end - start}")
+
+        return result
     return wrapper
 
 
