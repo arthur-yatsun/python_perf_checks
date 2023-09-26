@@ -12,7 +12,7 @@ def send_request(request_id: int):
     print(request_id, end - start, response)
 
 
-def start(workers: int, requests_number = 10):
+def start(workers: int, requests_number=10):
     start = time.perf_counter()
 
     with ThreadPoolExecutor(max_workers=workers) as executor:
